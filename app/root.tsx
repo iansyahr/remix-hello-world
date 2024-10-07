@@ -4,7 +4,7 @@ import {
   Outlet,
   Scripts,
 } from "@remix-run/react";
-import type { LinksFunction } from "@remix-run/node";
+import type { LinksFunction, MetaFunction } from "@remix-run/node";
 import "./tailwind.css";
 
 export const links: LinksFunction = () => [
@@ -18,7 +18,19 @@ export const links: LinksFunction = () => [
     rel: "stylesheet",
     href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
   },
+  {
+    rel : "stylesheet",
+    href: "https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" // <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
+  }
 ];
+
+export const meta: MetaFunction = () => {
+  return [
+    { charset: "utf-8" },
+    { title: "Muhamad Apriansyah Ramadhan"},
+    { viewport: "width=device-width,initial-scale=1"}
+  ];
+};
 
 export default function App() {
   return (
@@ -29,7 +41,7 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body className="bg-gradient-to-r from-blue-500 to-purple-500 min-h-screen flex items-center justify-center">
+      <body className="bg-gradient-to-br from-gray-900 to-gray-800 text-white min-h-screen">
         <Outlet />
         <Scripts />
       </body>
